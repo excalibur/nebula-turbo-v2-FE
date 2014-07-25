@@ -1,0 +1,89 @@
+<!doctype html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>登录</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <link rel="stylesheet" href="bower_components/animate.css/animate.css">
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+        <link rel="stylesheet" href="bower_components/bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.css">
+        <link rel="stylesheet" href="bower_components/Font-Awesome/css/font-awesome.css">
+        
+        <!-- build:css(.tmp) styles/main.css -->
+        <link rel="stylesheet" href="styles/login.css">
+        <!-- endbuild -->
+        <!-- build:js scripts/vendor/modernizr.js -->
+        <script src="bower_components/modernizr/modernizr.js"></script>
+        <!-- endbuild -->
+    </head>
+    <body class="login">
+        <!--[if lt IE 10]>
+            <p class="alert alert-danger" role="alert">你使用了一个<strong>很古老的</strong> 浏览器。 请访问 <a href="http://browsehappy.com/">升级</a>，改善你的体验。</p>
+        <![endif]-->
+
+
+<div id="login-container">
+    <div id="login-logo">
+        <a href="">
+            <img src="images/template/uadmin_logo.png" alt="logo">
+        </a>
+    </div>
+
+    <form id="login-form" action="#" method="post" class="form-horizontal">
+        <div class="form-group">
+            <a href="javascript:void(0)" class="login-back"><i class="fa fa-arrow-down"></i></a>
+        </div>
+        <div class="form-group">
+            <div class="col-xs-12">
+                <div class="input-group">
+                    <input type="text" id="login-email" name="email" placeholder="Email.." class="form-control">
+                    <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-xs-12">
+                <div class="input-group">
+                    <input type="password" id="login-password" name="password" placeholder="密码.."
+                           class="form-control">
+                    <span class="input-group-addon"><i class="fa fa-asterisk fa-fw"></i></span>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix">
+            <div class="btn-group btn-group-sm pull-right">
+                <a href="#" class="btn btn-warning" data-toggle="tooltip"
+                        title="忘记密码了?"><i class="fa fa-lock"></i></a>
+                <button type="submit" class="btn btn-success"><i class="fa fa-arrow-right"></i> 登录</button>
+            </div>
+            <div class="input-switch pull-left" data-toggle="tooltip" title="记住我一周" data-on="success" data-off="danger" data-on-label="<i class='fa fa-check fa-white'></i>" data-off-label="<i class='fa fa-times'></i>">
+                <input type="checkbox" name="rememberMe" checked>
+            </div>
+        </div>
+    </form>
+    <div id="login-buttons">
+        <h4 class="text-left">第三方帐号登录</h4>
+        <a id="login-btn-qq" class="btn btn-primary" href="#"><i class="fa fa-qq"></i> 腾讯QQ</a>
+        <a id="login-btn-weibo" class="btn btn-info" href="#"><i class="fa fa-weibo"></i> 新浪微博</a>
+    </div>
+</div>
+
+<script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
+<script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script type="text/javascript" src="bower_components/bootstrap-switch/dist/js/bootstrap-switch.js"></script>
+
+<script type="text/javascript">
+    $(function(){
+    $("[name='rememberMe']").bootstrapSwitch({
+        offColor: "danger",
+        onColor: "success",
+        onText:"<i class='fa fa-check fa-white'></i>",
+        offText:"<i class='fa fa-times'></i>"
+    });
+});
+</script>
+</body>
+</html>
