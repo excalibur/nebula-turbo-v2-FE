@@ -21,7 +21,9 @@
     "Buttons": "*",
     "iCheck": "~1.0.2",
     "responsive-nav": "~1.0.32",
-    "datatables": "~1.10.1"
+    "datatables": "~1.10.1",
+    "flot": "~0.8.3",
+    "css-toggle-switch": "~2.1.6"
   },
   "devDependencies": {}
 }

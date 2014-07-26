@@ -8,12 +8,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         <link rel="stylesheet" href="bower_components/animate.css/animate.css">
+        <link rel="stylesheet" href="bower_components/Font-Awesome/css/font-awesome.css">
         <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
         <link rel="stylesheet" href="bower_components/bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.css">
-        <link rel="stylesheet" href="bower_components/Font-Awesome/css/font-awesome.css">
 
-        <link rel="stylesheet" href="scripts/vendor/datatables-plugins/integration/font-awesome/dataTables.fontAwesome.css">
-
+        <link rel="stylesheet" href="scripts/vendor/datatables-plugins/integration/font-awesome/dataTables.fontAwesome.css"> 
+        <link rel="stylesheet" href="bower_components/bootstrap-daterangepicker/daterangepicker-bs3.css">
 
         
         <!-- build:css(.tmp) styles/main.css -->
@@ -238,9 +238,8 @@
                     </li>
                 </ul>
             </header>
-        </div>
-        <!-- /.page-container -->
-        <div id="inner-container">
+
+             <div id="inner-container">
             <aside id="page-sidebar" class="collapse navbar-collapse navbar-main-collapse">
                 <form id="sidebar-search" action="page_search_results.html" method="post">
                     <div class="input-group">
@@ -316,21 +315,18 @@
                         <h5>头部</h5>
                         <label id="topt-fixed-header-top" class="switch switch-success" data-toggle="tooltip" title="Top fixed header">
                             <input type="checkbox" name="toptFixedHeaderTop">
-                            <span></span>
+                           
                         </label>
                         <label id="topt-fixed-header-bottom" class="switch switch-success" data-toggle="tooltip" title="Bottom fixed header">
                             <input type="checkbox" name="toptFixedHeaderBottom">
-                        <span></span></label>
+                        </label>
                         <h5>布局</h5>
                         <label id="topt-fixed-layout" class="switch switch-success" data-toggle="tooltip" title="Fixed layout (for large resolutions)">
-                            <input type="checkbox" name="toptFixedLayout"><span>
-                        </span></label>
+                            <input type="checkbox" name="toptFixedLayout"></label>
                     </div>
                 </div>
             </aside>
-        </div>
-        <!-- /#inner-container -->
-        <div id="page-content">
+ <div id="page-content">
             <ul id="nav-info" class="clearfix">
                 <li><a href="index.php"><i class="fa fa-home"></i></a></li>
                 <li class="active"><a href="">控制面板</a></li>
@@ -1087,13 +1083,33 @@
             </div>
             <!-- /.row -->
         </div>
-        <!-- /#inner-container -->
+  <!-- /#inner-container -->
+
+<footer>
+<span id="year-copy">2013-14</span> © <strong><a href="http://goo.gl/9QhXQ">uAdmin 2.0</a></strong> - Crafted with <i class="fa fa-heart text-danger"></i> by <strong><a href="http://goo.gl/vNS3I" target="_blank">pixelcave</a></strong>
+</footer>
+        </div>
+      
+
+
+
+        </div>
+        <!-- /.page-container -->
+       
+       
+
+        <a href="javascript:void(0)" id="to-top"><i class="fa fa-chevron-up"></i></a>
+
+       
         <script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="bower_components/bootstrap-switch/dist/js/bootstrap-switch.js"></script>
         <script type="text/javascript" src="bower_components/datatables/media/js/jquery.dataTables.js"></script>
         <script type="text/javascript" src="scripts/jquery.slimscroll.js"></script>
         <script type="text/javascript" src="scripts/vendor/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.js"></script>
+        <script type="text/javascript" src="bower_components/flot/jquery.flot.js"></script>
+        <script type="text/javascript" src="bower_components/moment/min/moment-with-langs.js"></script>
+        <script type="text/javascript" src="bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
         <!-- build:js scripts/main.js -->
         <script data-main="scripts/main" src="bower_components/requirejs/require.js"></script>
         <!-- endbuild -->
@@ -1123,6 +1139,8 @@
                                         $(this).toggleClass("open");
                                         $("#theme-options-content").slideToggle(200);
                                     });
+
+
                                     $("[name='toptFixedHeaderTop']").bootstrapSwitch({
                                         offColor: "danger",
                                         onColor: "success",
@@ -1144,6 +1162,9 @@
                                         offText:"<i class='fa fa-times'></i>",
                                         size: "small"
                                     });
+
+
+
                                     $(".scrollable").slimScroll({
                     height: "100px",
                     size: "3px",
@@ -1200,6 +1221,206 @@
 
             $(this).tab("show");
         });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        var o = $("#dash-example-stats"),
+        a = [
+            [0, 200],
+            [1, 250],
+            [2, 360],
+            [3, 584],
+            [4, 1250],
+            [5, 1100],
+            [6, 1500],
+            [7, 1521],
+            [8, 1600],
+            [9, 1658],
+            [10, 1623],
+            [11, 1900],
+            [12, 2100],
+            [13, 1700],
+            [14, 1620],
+            [15, 1820],
+            [16, 1950],
+            [17, 2220],
+            [18, 1951],
+            [19, 2152],
+            [20, 2300],
+            [21, 2325],
+            [22, 2200],
+            [23, 2156],
+            [24, 2350],
+            [25, 2420],
+            [26, 2480],
+            [27, 2320],
+            [28, 2380],
+            [29, 2520],
+            [30, 2590]
+        ],
+        l = [
+            [0, 50],
+            [1, 180],
+            [2, 200],
+            [3, 350],
+            [4, 700],
+            [5, 650],
+            [6, 700],
+            [7, 780],
+            [8, 820],
+            [9, 880],
+            [10, 1200],
+            [11, 1250],
+            [12, 1500],
+            [13, 1195],
+            [14, 1300],
+            [15, 1350],
+            [16, 1460],
+            [17, 1680],
+            [18, 1368],
+            [19, 1589],
+            [20, 1780],
+            [21, 2100],
+            [22, 1962],
+            [23, 1952],
+            [24, 2110],
+            [25, 2260],
+            [26, 2298],
+            [27, 1985],
+            [28, 2252],
+            [29, 2300],
+            [30, 2450]
+        ];
+
+    $.plot(o, [{
+        data: a,
+        lines: {
+            show: !0,
+            fill: !0,
+            fillColor: {
+                colors: [{
+                    opacity: .05
+                }, {
+                    opacity: .05
+                }]
+            }
+        },
+        points: {
+            show: !0
+        },
+        label: "All Visits"
+    }, {
+        data: l,
+        lines: {
+            show: !0,
+            fill: !0,
+            fillColor: {
+                colors: [{
+                    opacity: .05
+                }, {
+                    opacity: .05
+                }]
+            }
+        },
+        points: {
+            show: !0
+        },
+        label: "Unique Visits"
+    }], {
+        legend: {
+            position: "nw",
+            backgroundColor: "#f6f6f6",
+            backgroundOpacity: .8
+        },
+        colors: ["#555555", "#db4a39"],
+        grid: {
+            borderColor: "#cccccc",
+            color: "#999999",
+            labelMargin: 5,
+            hoverable: !0,
+            clickable: !0
+        },
+        yaxis: {
+            ticks: 5
+        },
+        xaxis: {
+            tickSize: 2
+        }
+    });
+
+
+
+
+var t = null;
+    o.bind("plothover", function(o, a, l) {
+        if (l) {
+            if (t !== l.dataIndex) {
+                t = l.dataIndex, $("#tooltip").remove();
+                var i = (l.datapoint[0], l.datapoint[1]);
+                $('<div id="tooltip" class="chart-tooltip"><strong>' + i + "</strong> visits</div>").css({
+                    top: l.pageY - 30,
+                    left: l.pageX + 5
+                }).appendTo("body").show()
+            }
+        } else $("#tooltip").remove(), t = null
+    });
+
+
+var t = $("#example-advanced-daterangepicker span");
+var e = $("#example-advanced-daterangepicker");
+
+    e.daterangepicker({
+            ranges: {
+               'Today': [new Date(), new Date()],
+               'Yesterday': [moment().subtract('days', 1), moment().subtract('days', 1)],
+               'Last 7 Days': [moment().subtract('days', 6), new Date()],
+               'Last 30 Days': [moment().subtract('days', 29), new Date()],
+               'This Month': [moment().startOf('month'), moment().endOf('month')],
+               'Last Month': [moment().subtract('month', 1).startOf('month'), moment().subtract('month', 1).endOf('month')]
+            },
+            opens: 'left',
+            format: 'YYYY-MM-DD',
+            startDate: '2014-06-27',
+            endDate: '2014-07-26'
+                    }, 
+        function(start, end) {
+            $("#example-advanced-daterangepicker span").html(
+                start.format("MMMM d, yy") + " - " + end.format("MMMM d, yy"));
+            
+            
+        }
+    );
+
+ t.html(
+moment().format("MMM Do YY") + " - " + moment().format("MMM Do YY"));
+
+
+ var a = $("#to-top");
+
+            $(window).scroll(function() {
+                $(this).scrollTop() > 150 ? a.fadeIn(150) : a.fadeOut(150)
+            });
+
+            a.click(function() {
+
+               $("html, body").animate({
+                    scrollTop: 0
+                }, 300);
+            });
+
+
                                 });
 
 
