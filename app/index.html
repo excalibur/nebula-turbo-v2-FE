@@ -10,11 +10,9 @@
         <link rel="stylesheet" href="bower_components/animate.css/animate.css">
         <link rel="stylesheet" href="bower_components/Font-Awesome/css/font-awesome.css">
         <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
-        <link rel="stylesheet" href="bower_components/bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.css">
-
         <link rel="stylesheet" href="scripts/vendor/datatables-plugins/integration/font-awesome/dataTables.fontAwesome.css"> 
         <link rel="stylesheet" href="bower_components/bootstrap-daterangepicker/daterangepicker-bs3.css">
-
+<link rel="stylesheet" href="styles/switch.css">
         
         <!-- build:css(.tmp) styles/main.css -->
         <link rel="stylesheet" href="styles/main.css">
@@ -313,16 +311,10 @@
                             </li>
                         </ul>
                         <h5>头部</h5>
-                        <label id="topt-fixed-header-top" class="switch switch-success" data-toggle="tooltip" title="Top fixed header">
-                            <input type="checkbox" name="toptFixedHeaderTop">
-                           
-                        </label>
-                        <label id="topt-fixed-header-bottom" class="switch switch-success" data-toggle="tooltip" title="Bottom fixed header">
-                            <input type="checkbox" name="toptFixedHeaderBottom">
-                        </label>
-                        <h5>布局</h5>
-                        <label id="topt-fixed-layout" class="switch switch-success" data-toggle="tooltip" title="Fixed layout (for large resolutions)">
-                            <input type="checkbox" name="toptFixedLayout"></label>
+                        <label id="topt-fixed-header-top" class="switch switch-success" data-toggle="tooltip" title="Top fixed header"><input type="checkbox"><span></span></label>
+<label id="topt-fixed-header-bottom" class="switch switch-success" data-toggle="tooltip" title="Bottom fixed header"><input type="checkbox"><span></span></label>
+<label id="topt-fixed-layout" class="switch switch-success" data-toggle="tooltip" title="Fixed layout (for large resolutions)"><input type="checkbox"><span></span></label>
+
                     </div>
                 </div>
             </aside>
@@ -1103,7 +1095,7 @@
        
         <script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="bower_components/bootstrap-switch/dist/js/bootstrap-switch.js"></script>
+
         <script type="text/javascript" src="bower_components/datatables/media/js/jquery.dataTables.js"></script>
         <script type="text/javascript" src="scripts/jquery.slimscroll.js"></script>
         <script type="text/javascript" src="scripts/vendor/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.js"></script>
@@ -1141,28 +1133,7 @@
                                     });
 
 
-                                    $("[name='toptFixedHeaderTop']").bootstrapSwitch({
-                                        offColor: "danger",
-                                        onColor: "success",
-                                        onText:"<i class='fa fa-check fa fa-white'></i>",
-                                        offText:"<i class='fa fa-times'></i>",
-                                        size: "small"
-                                    });
-                                    $("[name='toptFixedHeaderBottom']").bootstrapSwitch({
-                                        offColor: "danger",
-                                        onColor: "success",
-                                        onText:"<i class='fa fa-check fa-white'></i>",
-                                        offText:"<i class='fa fa-times'></i>",
-                                        size: "small"
-                                    });
-                                    $("[name='toptFixedLayout']").bootstrapSwitch({
-                                        offColor: "danger",
-                                        onColor: "success",
-                                        onText:"<i class='fa fa-check fa-white'></i>",
-                                        offText:"<i class='fa fa-times'></i>",
-                                        size: "small"
-                                    });
-
+                                   
 
 
                                     $(".scrollable").slimScroll({

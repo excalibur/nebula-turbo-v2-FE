@@ -1,0 +1,55 @@
+.switch {
+    margin: 1px 0;
+    position: relative;
+    cursor: pointer
+}
+.switch input {
+    position: absolute;
+    opacity: 0;
+    filter: alpha(opacity=0)
+}
+.switch span {
+    position: relative;
+    display: inline-block;
+    width: 54px;
+    height: 28px;
+    background-color: #ddd;
+    transition: background-color 0.35s;
+
+    &:after{
+        content: "";
+        position: absolute;
+        left: 2px;
+        top: 2px;
+        bottom: 2px;
+        width: 24px;
+        background-color: #fff;
+        -webkit-transition: all .1s linear;
+        transition: all .1s linear
+    }
+}
+
+.switch input:checked+span:after {
+    left: 28px;
+    width: 24px;
+    top: 2px;
+    bottom: 2px
+}
+.switch input:checked+span {
+    background-color: #ccc
+}
+.switch-default input:checked+span {
+    background-color: #999
+}
+.switch-info input:checked+span {
+    background-color: #7abce7
+}
+.switch-success input:checked+span {
+    background-color: #aad178
+}
+.switch-warning input:checked+span {
+    background-color: #f7be64
+}
+.switch-danger input:checked+span {
+    background-color: #ef8a80
+}

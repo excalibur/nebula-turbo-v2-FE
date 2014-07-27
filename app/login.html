@@ -9,9 +9,8 @@
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         <link rel="stylesheet" href="bower_components/animate.css/animate.css">
         <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
-        <link rel="stylesheet" href="bower_components/bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.css">
         <link rel="stylesheet" href="bower_components/Font-Awesome/css/font-awesome.css">
-        
+        <link rel="stylesheet" href="styles/switch.css">
         <!-- build:css(.tmp) styles/main.css -->
         <link rel="stylesheet" href="styles/login.css">
         <!-- endbuild -->
@@ -59,9 +58,7 @@
                         title="忘记密码了?"><i class="fa fa-lock"></i></a>
                 <button type="submit" class="btn btn-success"><i class="fa fa-arrow-right"></i> 登录</button>
             </div>
-            <div class="input-switch pull-left" data-toggle="tooltip" title="记住我一周" data-on="success" data-off="danger" data-on-label="<i class='fa fa-check fa-white'></i>" data-off-label="<i class='fa fa-times'></i>">
-                <input type="checkbox" name="rememberMe" checked>
-            </div>
+            <label id="topt-fixed-header-top" class="switch switch-success pull-left" data-toggle="tooltip" title="" data-original-title="Remember me" aria-describedby="tooltip231326"><input type="checkbox"><span></span></label>
         </div>
     </form>
     <div id="login-buttons">
@@ -73,16 +70,14 @@
 
 <script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
 <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-<script type="text/javascript" src="bower_components/bootstrap-switch/dist/js/bootstrap-switch.js"></script>
+
 
 <script type="text/javascript">
     $(function(){
-    $("[name='rememberMe']").bootstrapSwitch({
-        offColor: "danger",
-        onColor: "success",
-        onText:"<i class='fa fa-check fa-white'></i>",
-        offText:"<i class='fa fa-times'></i>"
-    });
+   $('[data-toggle="tooltip"]').tooltip({
+                    container: "body",
+                    animation: false
+                });
 });
 </script>
 </body>
