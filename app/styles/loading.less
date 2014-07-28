@@ -1,0 +1,130 @@
+// 
+#loading {
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    padding: 0 8px;
+    box-sizing: border-box;
+    &::before{
+        content: '';
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+    }
+
+    .loading-content{
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+        margin: 0 auto;
+        text-align: center;
+        z-index: 1045;
+    }
+    img{
+        margin: 0 auto;
+    }
+
+    .progress{      
+        margin: 10% auto;
+        width: 300px;
+    }
+
+    .progress-bar{
+         color: #000;
+    }
+}
+
+
+[class*=" loader-"], [class^=loader-] {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-top: 1px;
+    *margin-right: .3em;
+    line-height: 16px;
+    vertical-align: text-top;
+    background-position: top left;
+    background-repeat: no-repeat;
+    background-size: 16px 16px
+}
+.loader-01 {
+    background-image: url(../images/loading.gifs/loading01.gif)
+}
+.loader-02 {
+    background-image: url(../images/loading.gifs/loading02.gif)
+}
+.loader-03 {
+    background-image: url(../images/loading.gifs/loading03.gif)
+}
+.loader-04 {
+    background-image: url(../images/loading.gifs/loading04.gif)
+}
+.loader-05 {
+    background-image: url(../images/loading.gifs/loading05.gif)
+}
+.loader-06 {
+    background-image: url(../images/loading.gifs/loading06.gif)
+}
+.loader-07 {
+    background-image: url(../images/loading.gifs/loading07.gif)
+}
+.loader-08 {
+    background-image: url(../images/loading.gifs/loading08.gif)
+}
+.loader-09 {
+    background-image: url(../images/loading.gifs/loading09.gif)
+}
+.loader-10 {
+    background-image: url(../images/loading.gifs/loading10.gif)
+}
+.loader-11 {
+    background-image: url(../images/loading.gifs/loading11.gif)
+}
+.loader-12 {
+    background-image: url(../images/loading.gifs/loading12.gif)
+}
+
+@media only screen and (-Webkit-min-device-pixel-ratio: 1.5), 
+only screen and (-moz-min-device-pixel-ratio: 1.5), 
+only screen and (-o-min-device-pixel-ratio: 3/2), 
+only screen and (min-device-pixel-ratio: 1.5) {
+    .loader-01 {
+        background-image: url(../images/loading.gifs/loading01@2x.gif)
+    }
+    .loader-02 {
+        background-image: url(../images/loading.gifs/loading02@2x.gif)
+    }
+    .loader-03 {
+        background-image: url(../images/loading.gifs/loading03@2x.gif)
+    }
+    .loader-04 {
+        background-image: url(../images/loading.gifs/loading04@2x.gif)
+    }
+    .loader-05 {
+        background-image: url(../images/loading.gifs/loading05@2x.gif)
+    }
+    .loader-06 {
+        background-image: url(../images/loading.gifs/loading06@2x.gif)
+    }
+    .loader-07 {
+        background-image: url(../images/loading.gifs/loading07@2x.gif)
+    }
+    .loader-08 {
+        background-image: url(../images/loading.gifs/loading08@2x.gif)
+    }
+    .loader-09 {
+        background-image: url(../images/loading.gifs/loading09@2x.gif)
+    }
+    .loader-10 {
+        background-image: url(../images/loading.gifs/loading10@2x.gif)
+    }
+    .loader-11 {
+        background-image: url(../images/loading.gifs/loading11@2x.gif)
+    }
+    .loader-12 {
+        background-image: url(../images/loading.gifs/loading12@2x.gif)
+    }
+}
