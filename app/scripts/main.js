@@ -1,6 +1,4 @@
-/**
- * require 全局配置以及main入口
- */
+// require 全局配置以及main入口
 'use strict';
 require.config({
   shim: {
@@ -48,10 +46,10 @@ require.config({
 
 require([
     'backbone',
-    'routes/index'
-], function (Backbone, IndexRouter) {
-    new IndexRouter();
-
+    'routes/workspace',
+    'config'
+], function (Backbone, Workspace, config) {
+    config.app.workspace = new Workspace();
     // 采用HTML5的pushState
     Backbone.history.start({pushState: true});
 });

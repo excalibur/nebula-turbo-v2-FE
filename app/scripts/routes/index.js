@@ -1,21 +1,13 @@
-/*global define*/
-
 define([
     'jquery',
     'backbone'
 ], function ($, Backbone) {
     'use strict';
 
-    var IndexRouter = Backbone.Router.extend({
-        routes: {
-        },
-        initialize: function(){
-        	console.log("aaaa");
+    var index = function(actions){
+            console.log("==============");
+            console.log(actions);
         }
 
-
-
-    });
-
-    return IndexRouter;
+    return index;
 });
