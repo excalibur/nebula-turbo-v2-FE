@@ -34,13 +34,13 @@ define(['jquery', 'backbone', 'config'], function($, Backbone, config) {
         },
         // 默认页面
         index: function(){
-            require(['views/index'],function(IndexView){
+            require(['views/layout'],function(LayoutView){
 
-                app.view = new IndexView();
+                app.view = new LayoutView();
                 
                 app.view.render();
 
-                $(".page-container").html(app.view.el);
+                // $(".page-container").html(app.view.el);
             });
         },
         // 登录页面
@@ -52,7 +52,7 @@ define(['jquery', 'backbone', 'config'], function($, Backbone, config) {
                 
                 app.view.render();
 
-                $(".page-container").html(app.view.el);
+                // $(".page-container").html(app.view.el);
             });
         }
     });
