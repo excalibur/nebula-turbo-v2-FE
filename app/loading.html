@@ -38,11 +38,46 @@
         </div>
         <!-- /#loading -->
 
-        <div class="page-container">
 
-        </div>
-        <!-- /.page-container -->
+<script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
+        <script type="text/javascript">
+        $(function(){
+            $.ajax({xhr: function(){
+                var xhr = new window.XMLHttpRequest();
+                //长传 进度条
+                xhr.upload.addEventListener("progress", function(evt){
+                  if (evt.lengthComputable) {
+                    var percentComplete = evt.loaded / evt.total;
+                    //Do something with upload progress
+                    console.log(percentComplete);
+                  }
+                }, false);
+                //下载 进度条
+                xhr.addEventListener("progress", function(evt){
+                    console.log(evt);
+                    if (evt.lengthComputable) {
+                        var percentComplete = evt.loaded / evt.total;
+                        //Do something with download progress
+                        console.log(percentComplete);
+                        var p = '' + (100 * percentComplete) + '%';
+                        var progress = $("#loading .progress-bar");
+                        progress.css("width", p);
+                        progress.html(p);
 
+                    }
+                }, false);
+                return xhr;
+                },
+                type: 'GET',
+                url: "bower_components/bootstrap/dist/js/bootstrap.js",
+                data: {},
+                success: function(data){
+                //Do something success-ish
+                // console.log(data);
+                }
+            });
+        });
+        </script>
         <!-- build:js scripts/main.js -->
         <script data-main="scripts/main" src="bower_components/requirejs/require.js"></script>
         <!-- endbuild -->

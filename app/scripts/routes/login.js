@@ -1,4 +1,4 @@
-
+// 进行登录控制
 define([
     'jquery',
     'backbone'
