@@ -2,7 +2,7 @@
 // 登录判断
 // TODO 载入动画
 // TODO 路由规划
-define(['jquery', 'backbone', 'config'], function($, Backbone, config) {
+define(['jquery', 'backbone', 'config', 'bootstrap'], function($, Backbone, config) {
     'use strict';
 
     var app = config.app;
@@ -31,6 +31,8 @@ define(['jquery', 'backbone', 'config'], function($, Backbone, config) {
             };
 
             callback.apply(this, args);
+
+        
         },
         // 默认页面
         index: function(){
@@ -52,7 +54,7 @@ define(['jquery', 'backbone', 'config'], function($, Backbone, config) {
                 
                 app.view.render();
 
-                // $(".page-container").html(app.view.el);
+                $(".page-container").html(app.view.el);
             });
         }
     });

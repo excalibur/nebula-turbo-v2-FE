@@ -1,0 +1,122 @@
+.widget {
+    padding: 0
+}
+.widget ul {
+    list-style: none;
+    margin: 0;
+    padding: 0
+}
+.widget ul li {
+    padding: 0 5px
+}
+.widget>li {
+    width: 250px;
+    padding: 3px 5px;
+    font-size: 12px
+}
+.widget.widget-fluid>li {
+    width: auto;
+    min-width: 180px;
+    max-width: 250px
+}
+.widget>li:first-child {
+    margin: 3px 0 0
+}
+.widget li.li-hover:hover, .widget li.new-on {
+    background-color: #f9f9f9
+}
+.widget li.widget-heading {
+    padding-top: 7px;
+    padding-bottom: 6px;
+    color: #555;
+    font-size: 13px;
+    font-weight: 700;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    background-color: #e5e5e5
+}
+.widget>li.widget-heading>.fa, .widget>li.widget-heading>.fi, .widget>li.widget-heading>.gi, .widget>li.widget-heading>.hi, .widget>li.widget-heading>.si, .widget>li.widget-heading>a>.fa, .widget>li.widget-heading>a>.fi, .widget>li.widget-heading>a>.gi, .widget>li.widget-heading>a>.hi, .widget>li.widget-heading>a>.si {
+    font-size: 18px;
+    font-weight: 400;
+    vertical-align: bottom
+}
+.widget>li.widget-heading>a:hover {
+    color: #999;
+    text-decoration: none
+}
+.widget li.label {
+    padding: 5px;
+    text-align: left;
+    width: auto;
+    display: block
+}
+.widget li.divider {
+    margin: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    border-bottom: none
+}
+.widget a.widget-link {
+    display: inline-block;
+    margin: 0!important;
+    padding: 0!important;
+    white-space: normal;
+    color: inherit;
+    font-weight: 700
+}
+.widget a.widget-link:hover {
+    text-decoration: underline;
+    background: none!important;
+    color: inherit
+}
+.widget a.widget-link:hover .fa, .widget a.widget-link:hover .fi, .widget a.widget-link:hover .gi, .widget a.widget-link:hover .hi, .widget a.widget-link:hover .si {
+    text-decoration: none
+}
+.widget .media {
+    margin: 0;
+    line-height: 15px;
+    padding: 0;
+    background: 0 0
+}
+.widget .media-heading {
+    margin: 0
+}
+.widget .media-heading .label {
+    font-size: 10px;
+    float: right
+}
+.widget .media-body .media {
+    margin-top: 5px
+}
+
+
+@media (max-width: 480px) {
+
+	#widgets {
+	    background-color: #565656;
+	    width: 100%;
+
+	    &>li{
+			width: 190px;
+
+			&:last-child{
+				float: right;
+			}
+
+			&.divider-vertical{
+				display: none;
+			}
+	    }
+	}
+
+	#messages-widget .media .pull-left, #twitter-widget .media .pull-left {
+    	float: left
+	}
+}
+
+@media (max-width: 767px) {
+	 #widgets .dropdown-toggle {
+     padding-left: 8px;
+     padding-right: 8px
+	}
+}

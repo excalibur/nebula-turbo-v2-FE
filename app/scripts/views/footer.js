@@ -1,5 +1,4 @@
-/*global define*/
-
+// 页脚处理
 define([
     'jquery',
     'backbone',
@@ -21,7 +20,17 @@ define([
         },
 
         render: function () {
-            this.$el.html(this.template({}));
+            this.$el.html(this.template({
+                projectName: "nebula-turbo-v2-FE",
+                projectUrl: "https://github.com/excalibur/nebula-turbo-v2-FE",
+                authorName: "欧阳澄泓",
+                authorUrl: "http://leeln.com/"
+
+            }));
+
+            // 处理日期
+            var now = new Date();
+            this.$("#year-copy").html(now.getFullYear() === 2014 ? "2014" : "2014-" + now.getFullYear().toString().substr(2, 2));
         }
     });
 

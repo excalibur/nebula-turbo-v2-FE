@@ -40,8 +40,7 @@ define([
             this.$el.prepend(this.header.el);
 
             // 渲染导航
-            this.sidebar.render();
-            this.container.append(this.sidebar.el);
+            this.container.append(this.sidebar.render().el);
 
             // 渲染主体
             this.content.render();
@@ -50,6 +49,19 @@ define([
             // 渲染footer
             this.footer.render();
             this.container.append(this.footer.el);
+
+
+
+            // 默认的初始
+            $('[data-toggle="tooltip"]').tooltip({
+                container: "body",
+                animation: false
+            });
+
+            $('[data-toggle="popover"]').popover({
+                container: "body",
+                animation: false
+            });
         }
     });
 
