@@ -4,13 +4,14 @@ define([
     'jquery',
     'backbone',
     'handlebars',
+    './base',
     'templates',
     'config'
-], function ($, Backbone, Handlebars, JST, config) {
+], function ($, Backbone, Handlebars, BaseView, JST, config) {
     'use strict';
 
-    var IndexView = Backbone.View.extend({
-        template: JST['app/scripts/templates/index.hbs'],
+    var UsersView = BaseView.extend({
+        template: JST['app/scripts/templates/users.hbs'],
 
         tagName: 'div',
 
@@ -20,8 +21,8 @@ define([
 
         events: {},
 
-        initialize: function () {
-           
+        init: function () {
+            
         },
 
         render: function () {
@@ -29,5 +30,5 @@ define([
         }
     });
 
-    return IndexView;
+    return UsersView;
 });

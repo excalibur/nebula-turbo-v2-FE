@@ -4,23 +4,24 @@ define([
     'jquery',
     'backbone',
     'handlebars',
+    './base',
     'templates',
     'config'
-], function ($, Backbone, Handlebars, JST, config) {
+], function ($, Backbone, Handlebars, BaseView, JST, config) {
     'use strict';
 
-    var ContentView = Backbone.View.extend({
-        template: JST['app/scripts/templates/content.hbs'],
+    var DashboardView = BaseView.extend({
+        template: JST['app/scripts/templates/dashboard.hbs'],
 
         tagName: 'div',
 
-        id: 'page-content',
+        id: '',
 
         className: '',
 
         events: {},
 
-        initialize: function () {
+        init: function () {
             
         },
 
@@ -29,5 +30,5 @@ define([
         }
     });
 
-    return ContentView;
+    return DashboardView;
 });

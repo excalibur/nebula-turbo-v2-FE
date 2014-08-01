@@ -95,17 +95,20 @@
 	#widgets {
 	    background-color: #565656;
 	    width: 100%;
+        
 
-	    &>li{
+        &:last-child{
+                float: right;
+            }
+
+        &.divider-vertical{
+            display: none;
+        }
+            
+	    .widget>li{
 			width: 190px;
 
-			&:last-child{
-				float: right;
-			}
-
-			&.divider-vertical{
-				display: none;
-			}
+			
 	    }
 	}
 

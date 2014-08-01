@@ -7,9 +7,8 @@ define([
     'config',
     './header',
     './sidebar',
-    './content',
     './footer'
-], function ($, Backbone, Handlebars, JST, config, HeaderView, SidebarView, ContentView, FooterView) {
+], function ($, Backbone, Handlebars, JST, config, HeaderView, SidebarView, FooterView) {
     'use strict';
 
     var LayoutView = Backbone.View.extend({
@@ -20,8 +19,6 @@ define([
         sidebar: new SidebarView(),
 
         footer: new FooterView(),
-
-        content: new ContentView(),
 
         el: '.page-container',
 
@@ -43,14 +40,12 @@ define([
             this.container.append(this.sidebar.render().el);
 
             // 渲染主体
-            this.content.render();
-            this.container.append(this.content.el);
+            this.content = $("<div id=\"page-content\"></div>");
+            this.container.append(this.content);
 
             // 渲染footer
             this.footer.render();
             this.container.append(this.footer.el);
-
-
 
             // 默认的初始
             $('[data-toggle="tooltip"]').tooltip({
@@ -62,6 +57,10 @@ define([
                 container: "body",
                 animation: false
             });
+        },
+
+        changeContent: function(view){
+            this.content.html(view.render().el);
         }
     });
 

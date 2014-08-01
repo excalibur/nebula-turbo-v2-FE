@@ -9,7 +9,8 @@ define(['jquery', 'backbone', 'config', 'bootstrap'], function($, Backbone, conf
     var WorkspaceRouter = Backbone.Router.extend({
         routes: {
             '': 'index',
-            'login': 'login'
+            'login': 'login',
+            "users": "users"
         },
         initialize: function() {
             
@@ -19,7 +20,7 @@ define(['jquery', 'backbone', 'config', 'bootstrap'], function($, Backbone, conf
         execute: function(callback, args){
             var token = app.localStorage.getItem("token");
             $("#loading").hide();
-
+        
             if (app.view) {
                 app.view.remove();
             };
@@ -30,20 +31,36 @@ define(['jquery', 'backbone', 'config', 'bootstrap'], function($, Backbone, conf
                 return;
             };
 
-            callback.apply(this, args);
+           
 
+            if (!app.layout) {
+
+                require(['views/layout'], function(LayoutView){
+                    app.layout = new LayoutView();
+
+                    app.layout.render();
+
+                    callback.apply(this, args);
+                });
+            }else{
+                callback.apply(this, args);
+            }
+            
+            
         
         },
         // 默认页面
         index: function(){
-            require(['views/layout'],function(LayoutView){
 
-                app.view = new LayoutView();
-                
-                app.view.render();
+            require(['views/dashboard'],function(DashboardView){
 
-                // $(".page-container").html(app.view.el);
+                app.view = new DashboardView();
+
+                app.layout.changeContent(app.view);
+
             });
+
+           
         },
         // 登录页面
         login: function(){
@@ -55,6 +72,15 @@ define(['jquery', 'backbone', 'config', 'bootstrap'], function($, Backbone, conf
                 app.view.render();
 
                 $(".page-container").html(app.view.el);
+            });
+        },
+        users: function(){
+            require(['views/users'],function(UsersView){
+
+                app.view = new UsersView();
+                
+                app.layout.changeContent(app.view);
+
             });
         }
     });
