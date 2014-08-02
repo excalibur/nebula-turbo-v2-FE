@@ -26,12 +26,20 @@ define(['jquery', 'backbone', 'config', 'bootstrap'], function($, Backbone, conf
             };
             
             // 没有token让其导航到登录页面
-            if (!token && callback != this.login) {
-                app.workspace.navigate("/login", true);
+            if (!token) {
+            	if (callback != this.login) {
+            		app.workspace.navigate("/login", {trigger: true});
+                	return;
+            	}
+                callback.apply(this, args);
                 return;
+            // 有token 访问登陆页时候 让其导航到主页
+            }else{
+            	if (callback == this.login ) {
+            		app.workspace.navigate("", {trigger: true});
+                	return;
+            	};
             };
-
-           
 
             if (!app.layout) {
 
@@ -64,7 +72,7 @@ define(['jquery', 'backbone', 'config', 'bootstrap'], function($, Backbone, conf
         },
         // 登录页面
         login: function(){
-
+ 
             require(['views/login'],function(LoginView){
 
                 app.view = new LoginView();

@@ -27,6 +27,7 @@ define([
 
         render: function () {
             this.$el.html(this.template({}));
+            $("title").html("管理后台——控制面板");
         }
     });
 
